@@ -1,4 +1,5 @@
 import express = require("express");
+import chalk from "chalk";
 
 export class ApiServer {
     private static app: express.Express | undefined;
@@ -10,7 +11,7 @@ export class ApiServer {
         // Server setup
         const port = process.env.PORT || 6000;
         this.app.listen(port, () => {
-            console.log('Server is running on http://localhost:6000');
+            console.log(chalk.yellow(`- API server is running on http://localhost:${port}`));
         });
 
         // Routes
